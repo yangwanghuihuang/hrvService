@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zlr.vhr.dao.interfaces.PositionMappers">
+<resultMap id="BaseResultMap" type="com.zlr.vhr.dao.bo.Position">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="departId" jdbcType="INTEGER" property="departid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+  </resultMap>
+<select id="selectPosById" resultMap="BaseResultMap" parameterType="com.zlr.vhr.dao.bo.Department">
+    select * from position where position.departId = #{integer}
+</select>
+</mapper>
